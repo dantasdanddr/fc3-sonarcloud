@@ -1,6 +1,7 @@
 package main
 
 func main() {
+	//Not used because tests are being carried out on other functions
 }
 
 func sum(a int, b int) int {
