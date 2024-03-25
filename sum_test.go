@@ -2,6 +2,10 @@ package main
 
 import "testing"
 
+func TestMain(t *testing.T) {
+	main()
+}
+
 func TestSum(t *testing.T) {
 
 	result := sum(2, 3)
