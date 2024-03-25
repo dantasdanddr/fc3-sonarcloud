@@ -1,6 +1,25 @@
 package main
 
-import "testing"
+import (
+	"os/exec"
+	"testing"
+)
+
+func TestMain(t *testing.T) {
+	t.Run("teste saida", func(t *testing.T) {
+		cmd := exec.Command("go", "run", "sum.go")
+		output, err := cmd.CombinedOutput()
+
+		if err != nil {
+			t.Errorf("Erro ao executar comando: %v", err)
+		}
+
+		expected := "Olá, mundo!\n"
+		if string(output) != expected {
+			t.Errorf("Saída inesperada: %v", string(output))
+		}
+	})
+}
 
 func TestSum(t *testing.T) {
 
